@@ -1,0 +1,156 @@
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: flex-start;  /* Align to the top for scrollability */
+    height: 100vh;
+    flex-direction: column;
+    padding: 1rem;            /* Reduced padding */
+    overflow-y: auto;         /* Allow vertical scrolling */
+    text-align: center;
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 75rem;         /* Limit maximum width */
+    margin-top: 1rem;         /* Reduced margin for compactness */
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    padding: 0.5rem;          /* Reduced padding */
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2.5rem;        /* Smaller font size */
+    color: #2a2a2a;
+    margin-bottom: 0.5rem;    /* Reduced margin */
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Game Board Styling (Memory Game) */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    gap: 8px;               /* Smaller gap between cards */
+    margin-top: 1rem;       /* Reduced margin */
+    justify-items: center;
+    max-width: 400px;       /* Max width to fit in the center */
+    margin-left: auto;      /* Center horizontally */
+    margin-right: auto;     /* Center horizontally */
+}
+
+/* Card Styling */
+.card {
+    width: 90px;            /* Smaller card size */
+    height: 90px;           /* Smaller card size */
+    background-color: #d1c4e9;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;      /* Slightly smaller text */
+    color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Flipped Card */
+.card.flipped {
+    color: white;
+    background-color: #e0dbeb;
+}
+
+/* Matched Card */
+.card.matched {
+    background-color: #51b76f;
+    pointer-events: none;
+}
+
+/* Timer and Moves Count Styling */
+.game-info {
+    margin-top: 1rem;        /* Reduced margin */
+}
+
+.game-info p {
+    font-size: 1rem;         /* Smaller font size */
+    margin: 0.5rem 0;
+}
+
+/* Reset Button Styling */
+#resetButton {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;  /* Smaller padding */
+    margin-top: 1rem;        /* Reduced margin */
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#resetButton:hover {
+    background-color: #e64a19;
+}
+
+/* Winning Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+}
